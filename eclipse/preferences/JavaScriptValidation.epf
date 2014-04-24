@@ -1,0 +1,9 @@
+# @title JavaScript Validation
+# @description Exclude Static JavaScript
+# @task_type LASTMOD
+#
+# Created by the Workspace Mechanic Preference Recorder
+#Thu Nov 14 22:27:45 CST 2013
+file_export_version=3.0
+/default/org.eclipse.wst.jsdt.ui/preferences_build_requested=1
+/instance/org.eclipse.wst.jsdt.core/semanticValidation=disabled

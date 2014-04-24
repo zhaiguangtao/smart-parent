@@ -1,0 +1,46 @@
+1.Creating a user with sudo privileges
+  $sudo adduser <username>
+  $sudo adduser <username> admin
+
+2.Getting MySQl and Apache2
+  $sudo apt-get install mysql-server
+  $sudo apt-get install apache2
+
+3.Making remote root access to MySQL
+  $sudo vi /etc/mysql/my.cnf
+  Comment out "bind-address=127.0.0.1", restart service mysql
+
+  $mysql -u root
+  mysql> set password for 'root'@'localhost' = PASSWORD('passw0rd');
+  mysql> grant all privileges on *.* to 'root'@'%' identified by 'passw0rd' with grant option;
+  mysql> flush privileges;
+  mysql> exit
+
+4.Installing java-jdk
+  follow the steps in the page refers to "http://www.wikihow.com/Install-Oracle-Java-on-Ubuntu-Linux"
+
+5.Getting tomcat7
+  $sudo apt-get install tomcat7
+  $sudo apt-get install tomcat7-admin
+  Here are the index of tomcat7:
+  /usr/share/tomcat7 && /var/lib/tomcat7/ && /etc/tomcat7/ 
+
+6.Making conjunction between Apache2 and tomcat7
+  it refers to "http://www.cnblogs.com/junsong/archive/2012/07/03/2574447.html"
+
+  $sudo apt-get install libapache2-mod-jk
+  $sudo vi /etc/tomcat7/server.xml
+  delete the comment symbol that includes "<Connector port="8009" protocol="AJP1.3" redirectPort="8443" />". 
+
+  $sudo vi /etc/apache2/sites-available/default 
+  add the below code:
+  .....
+       </Directory>
+  JkMount /* ajp13_worker
+  </VirtualHost>
+
+7.Configuring tomcat7
+  see details in tomcat-setup.txt
+  
+
+

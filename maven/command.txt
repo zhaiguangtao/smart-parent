@@ -1,0 +1,11 @@
+# Clean, compile, package and install to local repository
+
+> cd smart
+> mvn clean install
+
+# Deploy to team repository
+> mvn deploy
+
+# Deploy to tomcat
+> cd smart-framework/webapp
+webapp> mvn clean tomcat7:deploy -Dmaven.test.skip=true

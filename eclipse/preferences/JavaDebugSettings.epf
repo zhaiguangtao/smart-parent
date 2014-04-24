@@ -1,0 +1,9 @@
+# @title Java Debug Settings
+# @description Do not suspend on uncaught exceptions and compilation errors.
+# @task_type LASTMOD
+#
+# Created by the Workspace Mechanic Preference Recorder
+#Thu Aug 01 23:52:30 CST 2013
+file_export_version=3.0
+/instance/org.eclipse.jdt.debug.ui/org.eclipse.jdt.debug.ui.suspend_on_compilation_errors=false
+/instance/org.eclipse.jdt.debug.ui/org.eclipse.jdt.debug.ui.javaDebug.SuspendOnUncaughtExceptions=false

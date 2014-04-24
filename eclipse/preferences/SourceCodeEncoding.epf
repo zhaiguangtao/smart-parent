@@ -1,0 +1,9 @@
+# @title Source Code Encoding
+# @description Use UTF-8 encoding for all source code files.
+# @task_type LASTMOD
+#
+# Created by the Workspace Mechanic Preference Recorder
+#Sat Jul 20 17:57:45 CST 2013
+/instance/org.eclipse.core.resources/encoding=UTF-8
+file_export_version=3.0
+/instance/org.eclipse.jst.jsp.core/outputCodeset=UTF-8

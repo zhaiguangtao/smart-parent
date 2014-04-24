@@ -1,0 +1,16 @@
+# @title Web Resource Format
+# @description CSS, HTML, XML, JSP source code format.
+# @task_type LASTMOD
+#
+# Created by the Workspace Mechanic Preference Recorder
+#Sat Jul 20 18:28:36 CST 2013
+/instance/org.eclipse.wst.css.core/lineWidth=140
+/instance/org.eclipse.wst.css.core/indentationSize=2
+/instance/org.eclipse.wst.css.core/indentationChar=space
+/instance/org.eclipse.wst.html.core/indentationSize=2
+/instance/org.eclipse.wst.html.core/indentationChar=space
+/instance/org.eclipse.wst.html.core/lineWidth=140
+/instance/org.eclipse.wst.xml.core/indentationSize=2
+file_export_version=3.0
+/instance/org.eclipse.wst.xml.core/lineWidth=140
+/instance/org.eclipse.wst.xml.core/indentationChar=space

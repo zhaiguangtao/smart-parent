@@ -1,0 +1,9 @@
+# @title WST Validation Settings
+# @description Diasable all WST validation settings.
+# @task_type LASTMOD
+#
+# Created by the Workspace Mechanic Preference Recorder
+#Fri Aug 02 10:27:53 CST 2013
+/instance/org.eclipse.wst.validation/USER_MANUAL_PREFERENCE=enabledManualValidatorList
+/instance/org.eclipse.wst.validation/USER_BUILD_PREFERENCE=enabledBuildValidatorList
+file_export_version=3.0

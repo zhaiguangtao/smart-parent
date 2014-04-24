@@ -1,0 +1,10 @@
+# @title Java Code Extras
+# @description Java code extra settings.
+# @task_type LASTMOD
+#
+# Created by the Workspace Mechanic Preference Recorder
+#Sat Jul 20 18:09:24 CST 2013
+file_export_version=3.0
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.importorder=java;javax;junit;org;com;
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.enable.visibility.order=true
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.visibility.order=B,R,D,V,

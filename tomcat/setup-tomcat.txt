@@ -1,0 +1,72 @@
+1. JNDI DataSource
+   Add below configuration to tomcat/conf/server.xml:
+   
+   <Server port="8005" shutdown="SHUTDOWN">
+     <GlobalNamingResources>
+        <Resource name="jdbc/YourDb"
+              auth="Container" 
+              type="javax.sql.DataSource"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              driverClassName="com.mysql.jdbc.Driver" 
+              url="jdbc:mysql://localhost:3306/yourdb?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8"
+              username="yourusername"
+              password="yourpassword"
+              maxActive="15"
+              maxIdle="7"
+              validationQuery = "SELECT 1"  
+              testWhileIdle = "true"    
+              timeBetweenEvictionRunsMillis = "3600000"  
+              minEvictableIdleTimeMillis = "18000000"
+              testOnBorrow = "true"/>
+         </GlobalNamingResources>
+   </Server>
+   
+   Refer this page for mysql timeout config: http://blog.csdn.net/quickgu/article/details/7179023
+  
+   Add below configuration to tomcat/conf/context.xml
+   <Context>
+       <ResourceLink global="jdbc/YourDb" name="jdbc/YourDb" type="javax.sql.DataSource" />
+   </Context>
+   
+   Note: Put mysql-connector-java-5.1.23.jar inside tomcat/lib directory.
+   
+   
+ 2. Using JNDI DataSource
+    Add below to web.xml:
+    
+    <web-app>
+  		<resource-ref>
+            <res-ref-name>jdbc/YourDb</res-ref-name>
+            <res-type>javax.sql.DataSource</res-type>
+            <res-auth>Container</res-auth>
+        </resource-ref>
+    </web-app>
+    
+    Modify webapp/src/main/resources/META-INF/persistence.xml :
+    
+    <persistence-unit name="dswebapp">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.connection.datasource" value="java:comp/env/jdbc/DsWebAppDB"/>
+        </properties>
+    </persistence-unit>
+    
+  3. Set tomcat user role for administration
+     Modify tomcat/conf/tomcat-users.xml following the example config file. 
+     
+  4. Tomcat Variables
+  
+  Ubuntu Linux:  sudo vi /etc/default/default
+  Windows: edit tomcat/bin/catalina.bat
+    
+   # Use Oracle JDK
+   JAVA_HOME=/opt/java/jdk1.7.0_40
+   
+   # Set file encoding to UTF-8, increase heap size and perm size
+   JAVA_OPTS="-Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC -Dfile.encoding=UTF-8 -Xms256M -Xmx1024M -XX:PermSize=256M -XX:MaxPermSize=1024M"
+  
+ 
+  
+ 
+  
