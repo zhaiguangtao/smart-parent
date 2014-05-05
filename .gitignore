@@ -1,7 +1,11 @@
 #################
 ## Eclipse
 #################
-
+/target
+/.settings
+/.classpath
+*.iml
+.idea/
 *.pydevproject
 .project
 .metadata
